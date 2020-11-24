@@ -2,7 +2,10 @@ import uuid
 
 from django.test import TestCase
 from django.test import Client
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 
 from templated_email.models import SavedEmail
 
